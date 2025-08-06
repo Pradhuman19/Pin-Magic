@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://pin-magic-backend.onrender.com",
+        target: "https://pin-magic-backend.onrender.com/api",
         changeOrigin: true,
-        secure: true,
+        secure: false,
       },
     },
   },

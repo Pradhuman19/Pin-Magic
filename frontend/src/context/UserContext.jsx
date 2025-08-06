@@ -12,11 +12,10 @@ export const UserProvider = ({ children }) => {
   async function registerUser(name, email, password, navigate, fetchPins) {
     setBtnLoading(true);
     try {
-      const { data } = await axios.post("/api/user/register", {
-        name,
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+      `${import.meta.env.VITE_API_URL}/user/register`,
+      { name, email, password }
+    );
 
       toast.success(data.message);
       setUser(data.user);
