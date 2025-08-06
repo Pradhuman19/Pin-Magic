@@ -29,13 +29,13 @@ import pinRoutes from "./routes/pinRoutes.js";
 app.use("/api/user", userRoutes);
 app.use("/api/pin", pinRoutes);
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+// app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
