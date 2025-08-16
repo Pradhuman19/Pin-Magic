@@ -56,19 +56,19 @@ const PinPage = ({ user }) => {
   }, [params.id]);
 
   return (
-    <div>
+    <div className="flex justify-center items-center min-h-screen">
       {pin && (
-        <div className="flex flex-col items-center bg-gray-100 p-4 min-h-screen">
+        <div className="flex flex-col items-center bg-gray-100 p-4 ">
           {loading ? (
             <Loading />
           ) : (
-            <div className="bg-white rounded-lg shadow-lg flex flex-wrap w-full max-w-4xl">
+            <div className="bg-white rounded-lg shadow-lg flex flex-wrap  max-w-4xl">
               <div className="w-full md:w-1/2 bg-gray-200 rounded-t-lg md:rounded-l-lg md:rounded-t-none flex items-center justify-center">
                 {pin.image && (
                   <img
                     src={pin.image.url}
                     alt=""
-                    className="object-cover w-full rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+                    className="object-contai rounded-t-lg md:rounded-l-lg md:rounded-t-none"
                   />
                 )}
               </div>

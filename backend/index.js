@@ -4,6 +4,8 @@ import connectDb from "./database/db.js";
 import cookieParser from "cookie-parser";
 import cloudinary from "cloudinary";
 import path from "path";
+import cors from "cors";
+
 
 dotenv.config();
 
@@ -14,6 +16,12 @@ cloudinary.v2.config({
 });
 
 const app = express();
+// Enable CORS
+app.use(cors({
+  origin: process.env.CLIENT_URL || "http://localhost:5173", // adjust if needed
+  credentials: true,
+}));
+
 
 const port = process.env.PORT;
 
