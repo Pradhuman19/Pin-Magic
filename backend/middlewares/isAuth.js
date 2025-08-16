@@ -6,14 +6,14 @@ export const isAuth = async (req, res, next) => {
     const token = req.cookies.token;
 
     if (!token)
-      return res.status(403).json({
+      return res.status(401).json({
         message: "Please Login",
       });
 
     const decodedData = jwt.verify(token, process.env.JWT_SEC);
 
     if (!decodedData)
-      return res.status(403).json({
+      return res.status(401).json({
         message: "token expired",
       });
 

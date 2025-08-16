@@ -18,7 +18,7 @@ cloudinary.v2.config({
 const app = express();
 // Enable CORS
 app.use(cors({
-  origin: "https://pin-magic-frontend.vercel.app"|| "http://localhost:5173",
+  origin: ["https://pin-magic-frontend.vercel.app", "http://localhost:5173"],
   credentials: true,
 }));
 
