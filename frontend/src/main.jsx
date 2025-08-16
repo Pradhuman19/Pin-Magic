@@ -9,8 +9,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UserProvider>
       <PinProvider>
-        <App />
+        <App /> 
       </PinProvider>
     </UserProvider>
   </React.StrictMode>
 );
+
+//start
