@@ -18,13 +18,13 @@ cloudinary.v2.config({
 const app = express();
 // Enable CORS
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173", // adjust if needed
+  origin: process.env.CLIENT_URL || "http://localhost:5173",
   credentials: true,
 }));
 
 
 const port = process.env.PORT;
-
+console.log(port)
 //using middlewares
 app.use(express.json());
 app.use(cookieParser());
