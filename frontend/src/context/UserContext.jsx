@@ -18,7 +18,8 @@ export const UserProvider = ({ children }) => {
     try {
       const { data } = await axios.post(
         `${API_URL}/api/user/register`,
-        { name, email, password }
+        { name, email, password },
+        {withCredentials:true}
       );
 
       toast.success(data.message);
@@ -38,7 +39,8 @@ export const UserProvider = ({ children }) => {
     try {
       const { data } = await axios.post(
         `${API_URL}/api/user/login`,
-        { email, password }
+        { email, password },
+        {withCredentials:true}
       );
 
       toast.success(data.message);
@@ -54,7 +56,7 @@ export const UserProvider = ({ children }) => {
 
   async function fetchUser() {
     try {
-      const { data } = await axios.get(`${API_URL}/api/user/me`);
+      const { data } = await axios.get(`${API_URL}/api/user/me`,{withCredentials:true});
       setUser(data);
       setIsAuth(true);
       setLoading(false);
@@ -66,7 +68,7 @@ export const UserProvider = ({ children }) => {
 
   async function followUser(id, fetchUserCallback) {
     try {
-      const { data } = await axios.post(`${API_URL}/api/user/follow/${id}`);
+      const { data } = await axios.post(`${API_URL}/api/user/follow/${id}`,{},{withCredentials:true});
       toast.success(data.message);
       fetchUserCallback();
     } catch (error) {
