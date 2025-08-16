@@ -5,6 +5,7 @@ const generateToken = (id, res) => {
     expiresIn: "15d",
   });
 
+  console.log(token)
   res.cookie("token", token, {
     secure:true,
     httpOnly: true,
